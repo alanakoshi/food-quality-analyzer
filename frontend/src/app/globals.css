@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --start-gradient: #e6b4c4;
+  --end-gradient: #d5d0cd;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--start-gradient), var(--end-gradient));
+}
+
+.btn {
+  align-self: flex-start;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  padding: 2px 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
