@@ -38,7 +38,7 @@ export default function Analysis() {
         formData.append("file", file);
 
         setStage("loading");
-        const res = await fetch("http://localhost:8000/predict", {
+        const res = await fetch("https://alanakoshi-food-quality-analyzer.hf.space/predict", {
             method: "POST",
             body: formData,
         });
