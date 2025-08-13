@@ -1,8 +1,9 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function analysis() {
+export default function Analysis() {
     const [file, setFile] = useState<File | null>(null);
     const [previewURL, setPreviewURL] = useState<string | null>(null);
     const [result, setResult] = useState<string | null> (null);
@@ -60,14 +61,16 @@ export default function analysis() {
             {/* preview */}
             <div className="flex flex-1 items-center justify-center p-4">
                 {previewURL && (
-                    <div className="flex flex-col gap-4">
-                        <img
+                    <div className="flex flex-col gap-4 items-center justify-center">
+                        <Image
                             src={previewURL}
                             alt="preview"
-                            className="max-w-xs rounded shadow flex items-center justify-center"
+                            width={300}
+                            height={300}
+                            className="rounded shadow"
                         />
                         {stage === "loading" && <p className="text-lg">Analyzing...</p>}
-                        {stage === "done" && <p className="text-lg font-semibold">It's a {result}!</p>}
+                        {stage === "done" && <p className="text-lg font-semibold">It&apos;s a {result}!</p>}
                     </div>
                 )}
             </div>
