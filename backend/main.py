@@ -7,7 +7,8 @@ import tempfile
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://food-quality-analyzer.vercel.app"
 ]
 
 app.add_middleware(

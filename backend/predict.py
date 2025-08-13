@@ -1,9 +1,21 @@
+import os
+
+os.environ["HF_HOME"] = "/tmp/huggingface"
+os.environ["HF_HUB_CACHE"] = "/tmp/huggingface/cache"
+os.environ["XDG_CACHE_HOME"] = "/tmp"
+os.environ["MPLCONFIGDIR"] = "/tmp/matplotlib"
+
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array, smart_resize
+from huggingface_hub import hf_hub_download
 import numpy as np
 import matplotlib.pyplot as plt
 
-model = load_model('multioutput_food_model.keras')
+model_path = hf_hub_download(
+    repo_id="alanakoshi/food-quality-analyzer-model",
+    filename="multioutput_food_model.keras"
+)
+model = load_model(model_path)
 
 index_to_item = {
     0: 'apple',
