@@ -1,7 +1,10 @@
 import requests
 import os
 
+# local testing
 url = "http://127.0.0.1:8000/predict"
+# api testing
+# url = "https://alanakoshi-food-quality-analyzer.hf.space/predict" 
 
 test_folder = "test_images"
 
